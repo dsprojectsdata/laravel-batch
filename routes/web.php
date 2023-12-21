@@ -25,10 +25,14 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/add-form', [Home::class, 'save'])->name('save')->middleware('user_auth');
 Route::view('/contact', 'contact');
 
+Route::get('/', [Home::class, 'index'])->name('home');
+Route::post('/add-form', [Home::class, 'save'])->name('save');
+
+
 Route::prefix('admin')->middleware('user_auth')->group(function () {
 
-      Route::get('/', [Home::class, 'index'])->name('home');
-
-      Route::post('/add-form', [Home::class, 'save'])->name('save');
-
+      // Route::get('/', [Home::class, 'index'])->name('home');
+      // Route::post('/add-form', [Home::class, 'save'])->name('save');
 });
+
+

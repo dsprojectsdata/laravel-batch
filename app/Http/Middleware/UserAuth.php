@@ -16,10 +16,10 @@ class UserAuth
     public function handle(Request $request, Closure $next): Response
     {
         // session(['user_id' => 1]);
-
-        if (!session()->get('userId')) {
-            return redirect('/contact');
-        }
+echo 'global middleware';
+        // if (!session()->get('userId')) {
+        //     return redirect('/contact');
+        // }
 
 
         return $next($request);
