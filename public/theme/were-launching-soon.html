@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HOTEL HTML TEMPLATE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="images/icons/favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+        .counter.days .show.n1.hundreds,
+        .comingsoon-wrapper .thim-countdown .counter-group .counter-block .counter.days .hidden-up.n2.hundreds {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="page coming-soon">
+    <div class="comingsoon-wrapper">
+        <div class="background ">
+            <ul class="slides owl-carousel owl-theme">
+                <li><img src="images/slides/h1-slider1.jpg" alt=""></li>
+                <li><img src="images/slides/h1-slider2.jpg" alt=""></li>
+                <li><img src="images/slides/h1-slider3.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="coom-inner">
+            <a href="index.html" class="logo"><img src="images/logo1.png" alt=""></a>
+            <h1 class="title">WE’RE LAUNCHING SOON</h1>
+            <div class="thim-countdown" data-date="December 30, 2019 12:00:00">
+                <div class="count-down"></div>
+            </div>
+            <div class="content-text">
+                <p>Our website is under construction. We’ll be here soon with our new awesome site.
+                    <br> Get best experience with this one.</p>
+                <form action="#" method="post">
+                    <input type="email" required placeholder="Enter you email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/jquery.mb-comingsoon.min.js"></script>
+    <script src="js/libs/owl.carousel.min.js"></script>
+    <script>
+        $(".thim-countdown .count-down").mbComingsoon({
+            expiryDate: new Date($(".thim-countdown").data('date')),
+            speed: 100
+        });
+        $('.comingsoon-wrapper .background .slides').owlCarousel({
+            loop: true,
+            items: 1,
+            nav: false,
+            dots: false,
+            animateOut: 'fadeOut',
+            autoplay: true,
+            autoplayTimeout: 3000,
+        });
+    </script>
+</body>
+
+</html>
