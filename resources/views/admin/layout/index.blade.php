@@ -23,6 +23,17 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template/files\assets\css\style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/files\assets\css\jquery.mCustomScrollbar.css') }}">
+
+
+    <!-- Data Table Css -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('template/files\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('template/files\assets\pages\data-table\css\buttons.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('template/files\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css') }}">
+
+
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
 </head>
 
@@ -360,6 +371,12 @@
                                                 <span class="pcoded-mtext">Category</span>
                                             </a>
                                         </li>
+
+                                        <li class=" ">
+                                            <a href="{{ route('admin.blogIndex') }}">
+                                                <span class="pcoded-mtext">Blogs</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
 
@@ -381,7 +398,8 @@
     <script type="text/javascript" src="{{ asset('template/files\bower_components\jquery\js\jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('template/files\bower_components\jquery-ui\js\jquery-ui.min.js') }}">
     </script>
-    <script type="text/javascript" src="{{ asset('template/files\bower_components\popper.js\js\popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/files\bower_components\popper.js\js\popper.min.js') }}">
+    </script>
     <script type="text/javascript" src="{{ asset('template/files\bower_components\bootstrap\js\bootstrap.min.js') }}">
     </script>
     <!-- jquery slimscroll js -->
@@ -398,6 +416,25 @@
     <script src="{{ asset('template/files\assets\js\jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('template/files\assets\js\SmoothScroll.js') }}"></script>
     <script src="{{ asset('template/files\assets\js\pcoded.min.js') }}"></script>
+
+    <!-- data-table js -->
+    <script src="{{ asset('template/files\bower_components\datatables.net\js\jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('template/files\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js') }}">
+    </script>
+    <script src="{{ asset('template/files\assets\pages\data-table\js\jszip.min.js') }}"></script>
+    <script src="{{ asset('template/files\assets\pages\data-table\js\pdfmake.min.js') }}"></script>
+    <script src="{{ asset('template/files\assets\pages\data-table\js\vfs_fonts.js') }}"></script>
+    <script src="{{ asset('template/files\bower_components\datatables.net-buttons\js\buttons.print.min.js') }}"></script>
+    <script src="{{ asset('template/files\bower_components\datatables.net-buttons\js\buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('template/files\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js') }}">
+    </script>
+    <script src="{{ asset('template/files\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js') }}">
+    </script>
+    <script
+        src="{{ asset('template/files\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js') }}">
+    </script>
+    <script src="{{ asset('template/files\assets\pages\data-table\js\data-table-custom.js') }}"></script>
+
     <!-- custom js -->
     <script src="{{ asset('template/files\assets\js\vartical-layout.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('template/files\assets\pages\dashboard\custom-dashboard.js') }}"></script>
