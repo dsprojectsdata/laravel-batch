@@ -12,7 +12,7 @@
                             <div class="col-lg-8">
                                 <div class="page-header-title">
                                     <div class="d-inline">
-                                        <h4>Blogs Category</h4>
+                                        <h4>About</h4>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="col-sm-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Add Blogs Category</h5>
+                                        <h5>Add About</h5>
 
                                         <div class="card-header-right">
                                             <i class="icofont icofont-spinner-alt-5"></i>
@@ -55,13 +55,23 @@
                                                 {{ session('success') }}
                                             </div>
                                         @endif
-                                        <form method="post" action="{{ route('admin.blogCategorySave') }}">
+                                        <form method="post" action="{{ route('admin.aboutSave') }}">
                                             @csrf
                                             <div class="form-group row">
                                                 <label class="col-sm-12 col-form-label">Name</label>
                                                 <div class="col-sm-12">
                                                     <input type="text" name="name" class="form-control">
                                                     @error('name')
+                                                        <p class="form-error">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label">Content</label>
+                                                <div class="col-sm-12">
+                                                    <textarea type="text" name="content" class="form-control"></textarea>
+                                                    @error('content')
                                                         <p class="form-error">{{ $message }}</p>
                                                     @enderror
                                                 </div>
@@ -89,20 +99,21 @@
                                                 <thead>
                                                     <tr>
                                                         <th>S.No</th>
-                                                        <th>Category</th>
+                                                        <th>Title</th>
+                                                        <th>Content</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($cateData as $data)
+                                                    @foreach ($aboutData as $data)
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $data->name }}</td>
+                                                            <td>{{ $data->title }}</td>
+                                                            <td>{{ $data->content }}</td>
                                                             <td>
-                                                                <a href="{{ route('admin.blogCategoryEdit', [$data->id]) }}">
-                                                                    <button class="btn btn-primary"><i
-                                                                            class="icofont icofont-user-alt-3"></i></button></a>
-                                                                <a href="{{ route('admin.blogDelete', [$data->id]) }}"><button
+                                                                <button class="btn btn-primary"><i
+                                                                        class="icofont icofont-user-alt-3"></i></button>
+                                                                <a href="{{ route('admin.aboutDelete', [$data->id]) }}"><button
                                                                         class="btn btn-danger"><i
                                                                             class="icofont icofont-user-alt-3"></i></button></a>
                                                             </td>
@@ -114,8 +125,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

@@ -377,6 +377,12 @@
                                                 <span class="pcoded-mtext">Blogs</span>
                                             </a>
                                         </li>
+
+                                        <li class=" ">
+                                            <a href="{{ route('admin.aboutPage') }}">
+                                                <span class="pcoded-mtext">About Page Services</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
 

@@ -12,7 +12,7 @@
                             <div class="col-lg-8">
                                 <div class="page-header-title">
                                     <div class="d-inline">
-                                        <h4>Blogs Category</h4>
+                                        <h4>Add Blogs</h4>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="col-sm-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Add Blogs Category</h5>
+                                        <h5>Add Blogs</h5>
 
                                         <div class="card-header-right">
                                             <i class="icofont icofont-spinner-alt-5"></i>
@@ -55,15 +55,58 @@
                                                 {{ session('success') }}
                                             </div>
                                         @endif
-                                        <form method="post" action="{{ route('admin.blogCategorySave') }}">
+                                        <form method="post" action="{{ route('admin.blogupdate', [$blogData->id]) }}"
+                                            enctype="multipart/form-data">
                                             @csrf
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label">Category</label>
+                                                <div class="col-sm-12">
+                                                    <select name="category" id="" class="form-control">
+                                                        <option value="">Select Category</option>
+                                                        @foreach ($cateData as $category)
+                                                            <option value="{{ $category->id }}"
+                                                                @if ($category->id == $blogData->cate_id) selected @endif>
+                                                                {{ $category->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    @error('category')
+                                                        <p class="form-error">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label class="col-sm-12 col-form-label">Name</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" name="name" class="form-control">
+                                                    <input type="text" name="name" class="form-control"
+                                                        value="{{ $blogData->title }}">
                                                     @error('name')
                                                         <p class="form-error">{{ $message }}</p>
                                                     @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label">Description</label>
+                                                <div class="col-sm-12">
+                                                    <textarea name="description" class="form-control">{{ $blogData->description }}</textarea>
+                                                    @error('description')
+                                                        <p class="form-error">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label">Image</label>
+                                                <div class="col-sm-12">
+                                                    <input type="file" name="img" class="form-control">
+                                                    @error('img')
+                                                        <p class="form-error">{{ $message }}</p>
+                                                    @enderror
+                                                    <img class="img-icon mt-3" src="{{ asset($blogData->img) }}"
+                                                        alt="">
                                                 </div>
                                             </div>
 
@@ -76,46 +119,6 @@
 
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Blogs</h5>
-                                    </div>
-                                    <div class="card-block">
-                                        <div class="dt-responsive table-responsive">
-                                            <table id="simpletable" class="table table-striped table-bordered nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th>S.No</th>
-                                                        <th>Category</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($cateData as $data)
-                                                        <tr>
-                                                            <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $data->name }}</td>
-                                                            <td>
-                                                                <a href="{{ route('admin.blogCategoryEdit', [$data->id]) }}">
-                                                                    <button class="btn btn-primary"><i
-                                                                            class="icofont icofont-user-alt-3"></i></button></a>
-                                                                <a href="{{ route('admin.blogDelete', [$data->id]) }}"><button
-                                                                        class="btn btn-danger"><i
-                                                                            class="icofont icofont-user-alt-3"></i></button></a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-
-                                                    </tfoot>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>

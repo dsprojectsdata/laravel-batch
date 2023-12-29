@@ -37,7 +37,7 @@
                             <div class="col-sm-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Add Blogs Category</h5>
+                                        <h5>Edit Blogs Category</h5>
 
                                         <div class="card-header-right">
                                             <i class="icofont icofont-spinner-alt-5"></i>
@@ -55,12 +55,14 @@
                                                 {{ session('success') }}
                                             </div>
                                         @endif
-                                        <form method="post" action="{{ route('admin.blogCategorySave') }}">
+                                        <form method="post"
+                                            action="{{ route('admin.blogCategoryUpdate', [$cateData->id]) }}">
                                             @csrf
                                             <div class="form-group row">
                                                 <label class="col-sm-12 col-form-label">Name</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" name="name" class="form-control">
+                                                    <input type="text" name="name" class="form-control"
+                                                        value="{{ $cateData->name }}">
                                                     @error('name')
                                                         <p class="form-error">{{ $message }}</p>
                                                     @enderror
@@ -76,46 +78,6 @@
 
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Blogs</h5>
-                                    </div>
-                                    <div class="card-block">
-                                        <div class="dt-responsive table-responsive">
-                                            <table id="simpletable" class="table table-striped table-bordered nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th>S.No</th>
-                                                        <th>Category</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($cateData as $data)
-                                                        <tr>
-                                                            <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $data->name }}</td>
-                                                            <td>
-                                                                <a href="{{ route('admin.blogCategoryEdit', [$data->id]) }}">
-                                                                    <button class="btn btn-primary"><i
-                                                                            class="icofont icofont-user-alt-3"></i></button></a>
-                                                                <a href="{{ route('admin.blogDelete', [$data->id]) }}"><button
-                                                                        class="btn btn-danger"><i
-                                                                            class="icofont icofont-user-alt-3"></i></button></a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-
-                                                    </tfoot>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>

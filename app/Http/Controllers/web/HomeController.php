@@ -3,12 +3,26 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutPage;
+use App\Models\BlogCate;
+use App\Models\Blogs;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('web.pages.home');
+
+        $blogData = Blogs::with('category')->get();
+        $recentBlogs = Blogs::orderBy('created_at', 'desc')->take(3)->get();
+        $cateData = BlogCate::get();
+        // return ($recentBlogs);
+        return view('web.pages.home', compact('blogData', 'cateData', 'recentBlogs'));
+    }
+
+    public function aboutPage()
+    {
+        $aboutData = AboutPage::get();
+        return view('web.pages.about', compact('aboutData'));
     }
 }

@@ -62,9 +62,11 @@
                                                             <td><img width="50px" src="{{ asset($blog->img) }}"
                                                                     alt=""></td>
                                                             <td>
-                                                                <button class="btn btn-primary"><i
-                                                                        class="icofont icofont-user-alt-3"></i></button>
-                                                                <a href="{{ route('admin.blogDelete',[$blog->id]) }}"><button
+                                                                <a
+                                                                    href="{{ route('admin.blogEdit', [$blog->id]) }}"><button
+                                                                    class="btn btn-primary"><i
+                                                                        class="icofont icofont-user-alt-3"></i></button></a>
+                                                                <a href="{{ route('admin.blogDelete', [$blog->id]) }}"><button
                                                                         class="btn btn-danger"><i
                                                                             class="icofont icofont-user-alt-3"></i></button></a>
                                                             </td>

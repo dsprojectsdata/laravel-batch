@@ -12,7 +12,8 @@ class AdminBlogController extends Controller
 {
     public function category()
     {
-        return view('admin.blogs.category');
+        $cateData = BlogCate::get();
+        return view('admin.blogs.category', compact('cateData'));
     }
 
     public function blogCategorySave(Request $req)
@@ -33,6 +34,30 @@ class AdminBlogController extends Controller
             return redirect()->back()->with('error', 'Some error occurred');
         }
     }
+
+    public function blogCategoryEdit($id = '')
+    {
+        $cateData = BlogCate::find($id);
+        // pre($cateData);
+        return view('admin.blogs.edit-category', compact('cateData'));
+    }
+
+
+    public function blogCategoryUpdate(Request $req, $id = '')
+    {
+        $input = $req->all();
+
+        $cateData = BlogCate::find($id);
+
+        $cateData->name = $input['name'];
+
+        if ($cateData->save()) {
+            return redirect()->back()->with('success', 'Blog category updated successfully');
+        } else {
+            return redirect()->back()->with('error', 'Some error occurred');
+        }
+    }
+
 
     public function blogIndex()
     {
@@ -62,7 +87,7 @@ class AdminBlogController extends Controller
         $img = Storage::put('web/img/blogs', $input['img']);
 
         $blog->title = $input['name'];
-        $blog->description = $input['name'];
+        $blog->description = $input['description'];
         $blog->cate_id = $input['category'];
         $blog->img = $img;
         $blog->created_by = session('adminId');
@@ -79,5 +104,39 @@ class AdminBlogController extends Controller
         $blog = Blogs::find($id);
         $blog->delete();
         return redirect()->back()->with('success', 'Blog deleted successfully');
+    }
+
+    public function blogEdit($id = '')
+    {
+        $blogData = Blogs::find($id);
+        $cateData = BlogCate::get();
+        return view('admin.blogs.blog-edit', compact('blogData', 'cateData'));
+    }
+
+    public function blogupdate(Request $req, $id = '')
+    {
+        $input = $req->all();
+        // pre($input);
+
+        $blog = Blogs::find($id);
+
+        if (isset($input['img'])) {
+            // pre(public_path($blog->img));
+            unlink(public_path($blog->img));
+            $img = Storage::put('web/img/blogs', $input['img']);
+            
+            $blog->img = $img;
+        }
+
+        $blog->title = $input['name'];
+        $blog->description = $input['description'];
+        $blog->cate_id = $input['category'];
+        $blog->created_by = session('adminId');
+
+        if ($blog->save()) {
+            return redirect()->back()->with('success', 'Blog update successfully');
+        } else {
+            return redirect()->back()->with('success', 'Some error occurred');
+        }
     }
 }
