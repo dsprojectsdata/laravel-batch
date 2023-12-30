@@ -25,4 +25,9 @@ class HomeController extends Controller
         $aboutData = AboutPage::get();
         return view('web.pages.about', compact('aboutData'));
     }
+
+    public function contactPage()
+    {
+        return view('web.pages.contact');
+    }
 }

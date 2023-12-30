@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function () {
       Route::get('/', [HomeController::class, 'index'])->name('homePage');
-      Route::get('/blogs', [BlogController::class, 'index'])->name('blogIndex');
+      Route::get('/blogs', [BlogController::class, 'index'])->name('blogPage');
+      Route::get('/blog-details', [BlogController::class, 'blogDetails'])->name('blogDetails');
       Route::get('/about', [HomeController::class, 'aboutPage'])->name('aboutPage');
+
+      Route::get('/contact', [HomeController::class, 'contactPage'])->name('contactPage');
 });
 
 

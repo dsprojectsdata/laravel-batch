@@ -80,24 +80,6 @@
                                             on any template collection site for the download purpose. <a rel="nofollow"
                                                 href="https://templatemo.com/contact" target="_parent">Contact
                                                 TemplateMo</a> for more info. Thank you.</p>
-                                        <div class="post-options">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-tags"></i></li>
-                                                        <li><a href="#">Beauty</a>,</li>
-                                                        <li><a href="#">Nature</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="post-share">
-                                                        <li><i class="fa fa-share-alt"></i></li>
-                                                        <li><a href="#">Facebook</a>,</li>
-                                                        <li><a href="#"> Twitter</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -126,24 +108,6 @@
                                                 href="https://templatemo.com/tag/resume" target="_parent">resume</a>, <a
                                                 rel="nofollow" href="https://templatemo.com/tag/video"
                                                 target="_parent">video</a>, etc.</p>
-                                        <div class="post-options">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-tags"></i></li>
-                                                        <li><a href="#">Best Templates</a>,</li>
-                                                        <li><a href="#">TemplateMo</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="post-share">
-                                                        <li><i class="fa fa-share-alt"></i></li>
-                                                        <li><a href="#">Facebook</a>,</li>
-                                                        <li><a href="#">Twitter</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -167,24 +131,6 @@
                                             vestibulum odio. Aenean elit nunc, gravida in erat sit amet, feugiat viverra
                                             leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur
                                             nibh, in vehicula eros orci vel neque.</p>
-                                        <div class="post-options">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-tags"></i></li>
-                                                        <li><a href="#">HTML CSS</a>,</li>
-                                                        <li><a href="#">Photoshop</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="post-share">
-                                                        <li><i class="fa fa-share-alt"></i></li>
-                                                        <li><a href="#">Facebook</a>,</li>
-                                                        <li><a href="#">Twitter</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -199,14 +145,6 @@
                 <div class="col-lg-4">
                     <div class="sidebar">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="sidebar-item search">
-                                    <form id="search_form" name="gs" method="GET" action="#">
-                                        <input type="text" name="q" class="searchText"
-                                            placeholder="type to search..." autocomplete="on">
-                                    </form>
-                                </div>
-                            </div>
                             <div class="col-lg-12">
                                 <div class="sidebar-item recent-posts">
                                     <div class="sidebar-heading">
@@ -235,24 +173,6 @@
                                             @foreach ($cateData as $cate)
                                                 <li><b>- {{ $cate->name }}</b></li>
                                             @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="sidebar-item tags">
-                                    <div class="sidebar-heading">
-                                        <h2>Tag Clouds</h2>
-                                    </div>
-                                    <div class="content">
-                                        <ul>
-                                            <li><a href="#">Lifestyle</a></li>
-                                            <li><a href="#">Creative</a></li>
-                                            <li><a href="#">HTML5</a></li>
-                                            <li><a href="#">Inspiration</a></li>
-                                            <li><a href="#">Motivation</a></li>
-                                            <li><a href="#">PSD</a></li>
-                                            <li><a href="#">Responsive</a></li>
                                         </ul>
                                     </div>
                                 </div>

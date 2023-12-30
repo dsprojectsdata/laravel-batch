@@ -17,4 +17,4 @@ class Blogs extends Model
     {
         return $this->belongsTo(BlogCate::class, 'cate_id');
     }
-}
+    }

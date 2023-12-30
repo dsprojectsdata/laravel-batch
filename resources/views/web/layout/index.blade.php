@@ -49,21 +49,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home
+                            <a class="nav-link" href="{{ route('homePage') }}">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link" href="{{ route('aboutPage') }}">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog Entries</a>
+                            <a class="nav-link" href="{{ route('blogPage') }}">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="post-details.html">Post Details</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="{{ route('contactPage') }}">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -100,13 +97,13 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('web/assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('web/assets/js/custom.js')}}"></script>
-    <script src="{{ asset('web/assets/js/owl.js')}}"></script>
-    <script src="{{ asset('web/assets/js/slick.js')}}"></script>
-    <script src="{{ asset('web/assets/js/isotope.js')}}"></script>
-    <script src="{{ asset('web/assets/js/accordions.js')}}"></script>
+    <script src="{{ asset('web/assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('web/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('web/assets/js/owl.js') }}"></script>
+    <script src="{{ asset('web/assets/js/slick.js') }}"></script>
+    <script src="{{ asset('web/assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('web/assets/js/accordions.js') }}"></script>
 
     <script language="text/Javascript">
         cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
