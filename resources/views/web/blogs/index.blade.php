@@ -49,45 +49,35 @@
                                 <div class="col-lg-6">
                                     <div class="blog-post">
                                         <div class="blog-thumb">
-                                            <img src="assets/images/blog-thumb-01.jpg" alt="">
+                                            <img src="{{ asset($blog->img) }}" alt="">
                                         </div>
                                         <div class="down-content">
-                                            <span>Lifestyle</span>
-                                            <a href="post-details.html">
-                                                <h4>Donec tincidunt leo</h4>
+                                            <span>{{ $blog->category->name }}</span>
+                                            <a href="{{ route('blogDetails',[$blog->id]) }}">
+                                                <h4>{{ $blog->title }}</h4>
                                             </a>
                                             <ul class="post-info">
-                                                <li><a href="#">Admin</a></li>
-                                                <li><a href="#">May 31, 2020</a></li>
-                                                <li><a href="#">12 Comments</a></li>
+                                                <li><a href="#">{{ $blog->user->name }}</a></li>
+                                                <li><a href="#">{{ date('M d, Y', strtotime($blog->created_at)) }}</a>
+                                                </li>
+                                                <li><a href="#">{{$blog->comments->count()}} Comments</a></li>
                                             </ul>
-                                            <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer
-                                                auctor a mauris sit amet eleifend.</p>
-                                            <div class="post-options">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <ul class="post-tags">
-                                                            <li><i class="fa fa-tags"></i></li>
-                                                            <li><a href="#">Best Templates</a>,</li>
-                                                            <li><a href="#">TemplateMo</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>{{ substr($blog->description,0,50) }}</p>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
-                            
-                            
-                            
+
+
+
                             <div class="col-lg-12">
-                                <ul class="page-numbers">
+                                {{ $blogs->links() }}
+                                {{-- <ul class="page-numbers">
                                     <li><a href="#">1</a></li>
                                     <li class="active"><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>

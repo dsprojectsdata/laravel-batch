@@ -13,10 +13,11 @@ class HomeController extends Controller
     public function index()
     {
 
-        $blogData = Blogs::with('category')->get();
+        $blogData = Blogs::with('category', 'user')->orderBy('created_at', 'desc')->get();
+
         $recentBlogs = Blogs::orderBy('created_at', 'desc')->take(3)->get();
         $cateData = BlogCate::get();
-        // return ($recentBlogs);
+        // return ($blogData);
         return view('web.pages.home', compact('blogData', 'cateData', 'recentBlogs'));
     }
 
