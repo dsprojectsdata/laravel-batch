@@ -108,7 +108,7 @@ class AdminBlogController extends Controller
 
     public function blogEdit($id = '')
     {
-        $blogData = Blogs::find($id);
+        $blogData = Blogs::findOrFail($id);
         $cateData = BlogCate::get();
         return view('admin.blogs.blog-edit', compact('blogData', 'cateData'));
     }

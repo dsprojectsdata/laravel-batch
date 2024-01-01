@@ -37,7 +37,8 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Blogs</h5>
+                                        <a href="{{ route('admin.blogAdd') }}" target="_blank"><button
+                                                class="btn btn-primary btn-square">Add </button></a>
                                     </div>
                                     <div class="card-block">
                                         <div class="dt-responsive table-responsive">
@@ -62,10 +63,9 @@
                                                             <td><img width="50px" src="{{ asset($blog->img) }}"
                                                                     alt=""></td>
                                                             <td>
-                                                                <a
-                                                                    href="{{ route('admin.blogEdit', [$blog->id]) }}"><button
-                                                                    class="btn btn-primary"><i
-                                                                        class="icofont icofont-user-alt-3"></i></button></a>
+                                                                <a href="{{ route('admin.blogEdit', [$blog->id]) }}"><button
+                                                                        class="btn btn-primary"><i
+                                                                            class="icofont icofont-user-alt-3"></i></button></a>
                                                                 <a href="{{ route('admin.blogDelete', [$blog->id]) }}"><button
                                                                         class="btn btn-danger"><i
                                                                             class="icofont icofont-user-alt-3"></i></button></a>
