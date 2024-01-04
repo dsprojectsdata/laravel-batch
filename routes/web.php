@@ -28,6 +28,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
       Route::middleware('loginCheck')->group(function () {
             Route::get('/dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
+            Route::get('/logout', [AdminHomeController::class, 'logout'])->name('logout');
             Route::get('/about', [AdminHomeController::class, 'aboutPage'])->name('aboutPage');
             Route::post('/about', [AdminHomeController::class, 'aboutSave'])->name('aboutSave');
             Route::get('/about-delete/{id}', [AdminHomeController::class, 'aboutDelete'])->name('aboutDelete');

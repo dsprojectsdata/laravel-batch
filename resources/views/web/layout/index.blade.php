@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('web/assets/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('web/assets/css/templatemo-stand-blog.css') }}">
     <link rel="stylesheet" href="{{ asset('web/assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/assets/css/custom.css') }}">
 </head>
 
 <body>
@@ -40,7 +42,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('homePage') }}">
-                    <h2>Stand Blog<em>.</em></h2>
+                    <img class="site-logo" src="{{asset('web/assets\images\logo.png')}}" alt="site logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

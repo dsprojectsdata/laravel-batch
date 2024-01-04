@@ -198,7 +198,7 @@ header .navbar {
 }
 .navbar .navbar-brand {
 	float: 	left;
-	margin-top: -12px;
+	/* margin-top: -12px; */
 	outline: none;
 }
 .navbar .navbar-brand h2 {

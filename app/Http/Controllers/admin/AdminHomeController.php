@@ -4,13 +4,20 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutPage;
+use App\Models\BlogCate;
+use App\Models\Blogs;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $blog = Blogs::count();
+        $blogCate = BlogCate::count();
+        $comment = Comments::count();
+
+        return view('admin.dashboard', compact('blog', 'blogCate', 'comment'));
     }
 
     public function aboutPage()
@@ -40,5 +47,11 @@ class AdminHomeController extends Controller
         $about = AboutPage::find($id);
         $about->delete();
         return redirect()->back();
+    }
+
+    public function logout()
+    {
+        session()->forget(['adminId', 'adminName', 'adminEmail']);
+        return redirect()->route('admin.login');
     }
 }
