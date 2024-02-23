@@ -365,6 +365,20 @@
     <script type="text/javascript" src="{{ asset('template/files\assets\pages\dashboard\custom-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{ asset('template/files\assets\js\script.min.js') }}"></script>
 
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
 </body>
 
 </html>
+<script>
+    var pusher = new Pusher('{{ env('PUSHER_APP_KEY') }}', {
+        cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
+        encrypted: true
+    });
+
+    var channel = pusher.subscribe('chat');
+    channel.bind('ChatMessageSent', function(data) {
+        console.log(data.message);
+        // Handle the new message, e.g., update the chat UI
+    });
+</script>

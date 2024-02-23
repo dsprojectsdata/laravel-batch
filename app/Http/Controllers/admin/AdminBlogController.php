@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Events\ChatMessageSent;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCate;
 use App\Models\Blogs;
@@ -18,6 +19,15 @@ class AdminBlogController extends Controller
 
     public function blogCategorySave(Request $req)
     {
+        $input = $req->all();
+
+        broadcast(new ChatMessageSent($input['name']));
+
+        return response()->json(['status' => 'Message sent']);
+
+
+
+
         $req->validate([
             'name' => 'required'
         ]);

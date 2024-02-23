@@ -29,6 +29,16 @@ class HomeController extends Controller
 
     public function contactPage()
     {
+        $a = '5';       // Integer
+        var_dump($a);
+
+
+        $a = (int) $a;
+
+        var_dump($a);
+
+
+        die;
         return view('web.pages.contact');
     }
 }

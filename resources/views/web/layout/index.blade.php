@@ -1,3 +1,8 @@
+@php
+        // pre($call);
+    
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,6 +69,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contactPage') }}">Contact Us</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
